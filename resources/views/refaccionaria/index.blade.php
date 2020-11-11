@@ -8,6 +8,11 @@
 </style>
 
 <div class="push-top">
+    @if(session()->get('success'))
+        <div class="alert alert-success">
+            {{ session()->get('success') }}
+        </div><br />
+    @endif
     <table class="table">
         <thead>
             <tr class="table">
@@ -29,13 +34,14 @@
                 <td>{{$refaccionarias->costoPieza}}</td>
                 <td class="text-center">
                     <a href="{{route('refaccionarias.edit', $refaccionarias->id)}}" class="btn btn-primary btn-sm"">Edita</a>
-                    <form action="{{route('refaccionarias.destoy', $refaccionarias->id)}}" method="post" style="display: inline-block">
+                    <form action="{{route('refaccionarias.destroy', $refaccionarias->id)}}" method="post" style="display: inline-block">
                         @csrf
                         @method('DELETE')
-                        <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
+                        <button class="btn btn-danger btn-sm"" type="submit">Eliminar</button>
                     </form>
                 </td>
             </tr>
+            @endforeach
         </tbody>
     </table>
 </div>

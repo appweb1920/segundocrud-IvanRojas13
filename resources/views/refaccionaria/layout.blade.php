@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Refaccionaria CRUD</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container">
-        @yield('content')
+         @yield('content')
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>

@@ -27,28 +27,25 @@
                 </ul>
             </div><br />
         @endif
-        <form method="post"  action="{{ route('refaccionarias.store') }}">
+        <form method="post" action="{{ route('refaccionarias.store') }}">
             <div class="form-group">
                 @csrf
-                <label for="Nombre"></label>
+                <label for="nombre">Nombre de la pieza</label>
                 <input type="text" class="form-control" name="nombre"/>
             </div>
             <div class="form-group">
-                @csrf
-                <label for="Descripcion"></label>
+                <label for="descripcion">Descripcion</label>
                 <input type="text" class="form-control" name="descripcion"/>
             </div>
             <div class="form-group">
-                @csrf
-                <label for="Número de Piezas"></label>
+                <label for="numPiezas">Número de Piezas</label>
                 <input type="text" class="form-control" name="numPiezas"/>
             </div>
             <div class="form-group">
-                @csrf
-                <label for="Costo de la pieza"></label>
+                <label for="costoPieza">Costo de la pieza</label>
                 <input type="text" class="form-control" name="costoPieza"/>
             </div>
-            <button type="submit">Guardar</button>
+            <button type="submit" class="btn btn-block btn-danger">Guardar</button>
         </form>
     </div>
 </div>

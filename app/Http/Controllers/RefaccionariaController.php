@@ -16,7 +16,7 @@ class RefaccionariaController extends Controller
     {
         $refaccionaria = Refaccionaria::all();
         //return view('refaccionaria/index');
-        return view('index', compact('refaccionaria'));
+        return view('refaccionaria.index', compact('refaccionaria'));
     }
 
     /**
@@ -26,7 +26,7 @@ class RefaccionariaController extends Controller
      */
     public function create()
     {
-        return view('refaccionaria/crea');
+        return view('refaccionaria.crea');
     }
 
     /**
@@ -43,8 +43,8 @@ class RefaccionariaController extends Controller
             'numPiezas' => 'required|numeric',
             'costoPieza' => 'required|numeric',
         ]);
-        $student = Refaccionaria::create($guardaDato);
-        return redirect('/index')->with('Completado', 'Guardado');
+        $refaccionaria = Refaccionaria::create($guardaDato);
+        return redirect('/refaccionarias')->with('Completado', 'Guardado');
     }
 
     /**
@@ -66,7 +66,8 @@ class RefaccionariaController extends Controller
      */
     public function edit(Refaccionaria $refaccionaria)
     {
-        //
+        $refaccionaria = Refaccionaria::findorfail($id);
+        return view('edit', compact('refaccionaria'));
     }
 
     /**
@@ -78,7 +79,14 @@ class RefaccionariaController extends Controller
      */
     public function update(Request $request, Refaccionaria $refaccionaria)
     {
-        //
+        $guardaDato = $request->validate([
+            'nombre' => 'required|max:255',
+            'descripcion' => 'required|max:255',
+            'numPiezas' => 'required|numeric',
+            'costoPieza' => 'required|numeric',
+        ]);
+        $refaccionaria = Refaccionaria::create($guardaDato);
+        return redirect('/refaccionarias')->with('Completado', 'Guardado');
     }
 
     /**
