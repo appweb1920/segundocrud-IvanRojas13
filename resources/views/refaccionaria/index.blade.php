@@ -1,4 +1,4 @@
-@extends(refaccionaria.layout)
+@extends('refaccionaria.layout')
 @section('content')
 
 <style>
@@ -10,7 +10,7 @@
 <div class="push-top">
     @if(session()->get('success'))
         <div class="alert alert-success">
-            {{ session()->get('success') }}
+            {{ session()->get('success') }}  
         </div><br />
     @endif
     <table class="table">
@@ -21,7 +21,7 @@
                 <td>Descripcion</td>
                 <td>Número de Piezas</td>
                 <td>Costo de la Pieza</td>
-                <td class="text-center">Action</td>
+                <td class="text-center">Accion</td>
             </tr>
         </thead>
         <tbody>
