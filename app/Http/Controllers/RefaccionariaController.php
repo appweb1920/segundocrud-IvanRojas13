@@ -36,7 +36,7 @@ class RefaccionariaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('refaccionaria/crea');
     }
 
     /**
