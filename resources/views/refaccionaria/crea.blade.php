@@ -27,7 +27,7 @@
                 </ul>
             </div><br />
         @endif
-        <form method="post" action={{ route('recolectores.store' }}>
+        <form method="post"  action="{{ route('refaccionarias.store') }}">
             <div class="form-group">
                 @csrf
                 <label for="Nombre"></label>
@@ -52,3 +52,4 @@
         </form>
     </div>
 </div>
+@endsection

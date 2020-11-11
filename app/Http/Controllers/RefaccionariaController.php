@@ -36,7 +36,14 @@ class RefaccionariaController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $guardaDato = $request->validate([
+            'nombre' => 'required|max:255',
+            'descripcion' => 'required|max:255',
+            'numPiezas' => 'required|numeric',
+            'costoPieza' => 'required|numeric',
+        ]);
+        $student = Refaccionaria::create($guardaDato);
+        return redirect('/index')->with('Completado', 'Guardado');
     }
 
     /**
