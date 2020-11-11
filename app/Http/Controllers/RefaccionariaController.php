@@ -14,6 +14,7 @@ class RefaccionariaController extends Controller
      */
     public function index()
     {
+        $refaccionaria = Refaccionaria::all();
         return view('refaccionaria/index');
     }
 
