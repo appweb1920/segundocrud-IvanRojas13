@@ -13,6 +13,8 @@
             {{ session()->get('success') }}  
         </div><br />
     @endif
+    <h1>CRUD Segundo Parcial Refaccionaria</h1>
+    <a href="{{route('refaccionarias.create')}}" class="btn btn-primary btn-sm"">Registrar nueva pieza</a>
     <table class="table">
         <thead>
             <tr class="table">
