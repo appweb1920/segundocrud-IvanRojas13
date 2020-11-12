@@ -64,10 +64,10 @@ class RefaccionariaController extends Controller
      * @param  \App\Refaccionaria  $refaccionaria
      * @return \Illuminate\Http\Response
      */
-    public function edit(Refaccionaria $refaccionaria)
+    public function edit($id)
     {
         $refaccionaria = Refaccionaria::findorfail($id);
-        return view('edit', compact('refaccionaria'));
+        return view('refaccionaria.edita', compact('refaccionaria'));
     }
 
     /**
@@ -77,7 +77,7 @@ class RefaccionariaController extends Controller
      * @param  \App\Refaccionaria  $refaccionaria
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Refaccionaria $refaccionaria)
+    public function update(Request $request, $id)
     {
         $guardaDato = $request->validate([
             'nombre' => 'required|max:255',
@@ -85,7 +85,7 @@ class RefaccionariaController extends Controller
             'numPiezas' => 'required|numeric',
             'costoPieza' => 'required|numeric',
         ]);
-        $refaccionaria = Refaccionaria::create($guardaDato);
+        Refaccionaria::whereId($id)->update($guardaDato);
         return redirect('/refaccionarias')->with('Completado', 'Guardado');
     }
 

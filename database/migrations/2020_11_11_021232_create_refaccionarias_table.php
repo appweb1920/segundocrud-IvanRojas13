@@ -18,7 +18,7 @@ class CreateRefaccionariasTable extends Migration
             $table->string('nombre');
             $table->string('descripcion');
             $table->integer('numPiezas');
-            $table->integer('costoPieza');
+            $table->float('costoPieza');
             $table->timestamps();
         });
     }
