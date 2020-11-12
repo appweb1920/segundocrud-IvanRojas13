@@ -95,8 +95,11 @@ class RefaccionariaController extends Controller
      * @param  \App\Refaccionaria  $refaccionaria
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Refaccionaria $refaccionaria)
+    public function destroy($id)
     {
-        //
+        $refaccionaria = Refaccionaria::findorfail($id);
+        $refaccionaria->delete();
+
+        return redirect('/refaccionarias')->with('Completado', 'Guardado');
     }
 }

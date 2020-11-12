@@ -23,7 +23,7 @@
                 <td>Descripcion</td>
                 <td>Número de Piezas</td>
                 <td>Costo de la Pieza</td>
-                <td class="text-center">Accion</td>
+                <td class="text-center">Acción</td>
             </tr>
         </thead>
         <tbody>
